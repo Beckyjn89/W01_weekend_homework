@@ -100,10 +100,10 @@ class TestPetShop < Minitest::Test
   end
 
 ##test five
-  # def test_pets_sold
-  #   sold = pets_sold(@pet_shop)
-  #   assert_equal(0, sold)
-  # end
+  def test_pets_sold
+    sold = pets_sold(@pet_shop)
+    assert_equal(0, sold)
+  end
 
 ##test six
   # def test_increase_pets_sold
