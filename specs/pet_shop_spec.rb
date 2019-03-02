@@ -154,10 +154,10 @@ class TestPetShop < Minitest::Test
     assert_equal(7, count)
   end
 ##test fourteen
-  # def test_customer_cash
-  #   cash = customer_cash(@customers[0])
-  #   assert_equal(1000, cash)
-  # end
+  def test_customer_cash
+    cash = customer_cash(@customers[0])
+    assert_equal(1000, cash)
+  end
 ##test fifteen
   # def test_remove_customer_cash
   #   customer = @customers[0]
