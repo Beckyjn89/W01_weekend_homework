@@ -58,5 +58,9 @@ def customer_cash(customer)
 end
 
 def remove_customer_cash(customer, cash_removed)
-  return customer[:cash] -= cash_removed 
+  return customer[:cash] -= cash_removed
+end
+
+def customer_pet_count(customer)
+  return customer[:pets].count
 end
