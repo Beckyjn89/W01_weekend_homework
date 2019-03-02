@@ -78,7 +78,7 @@ end
 
 def sell_pet_to_customer(pet_shop, pet_wanted, customer)
   for pet in pet_shop[:pets]
-    if pet == pet_wanted
+    if pet == pet_wanted && customer[:cash] >= pet_wanted[:price]
       customer[:pets].push(pet)
       pet_shop[:admin][:pets_sold] += 1
       customer[:cash] -= pet[:price]
