@@ -1,3 +1,5 @@
+
+
 def pet_shop_name(pet_shop)
   return pet_shop[:name]
 end
@@ -25,11 +27,18 @@ end
 def pets_by_breed(pet_shop, breed_name)
   breed_array = []
   index_num = 0
-  for shop in pet_shop
+  for pet in pet_shop
     if pet_shop[:pets][index_num][:breed] == breed_name
       breed_array.push(pet_shop[:pets][index_num][:breed])
     end
     index_num += 1
   end
   return breed_array
+end
+
+def find_pet_by_name(pet_shop, pet_name)
+  for pet in pet_shop[:pets]
+    return pet if pet[:name] == pet_name
+  end
+  return nil
 end
