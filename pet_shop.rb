@@ -86,14 +86,14 @@ end
 #   return nil
 # end
 #
-# def sell_pet_to_customer(pet_shop, pet_wanted, customer)
-# for pet in petshop[:pets]
-#   if pet == pet_wanted && customer[:cash] >= pet_wanted[:price]
-#      add_pet_to_customer(customer, pet_wanted)
-#      pets_sold(pet_shop) + 1
-#      customer_cash(customer) -= pet[:price]
-#      total_cash(pet_shop) += pet[:price]
-#   end
-# end
-# return nil
-# end
+def sell_pet_to_customer(pet_shop, pet_wanted, customer)
+for pet in pet_shop[:pets]
+  if pet == pet_wanted && customer_can_afford_pet(customer, pet) == true
+    add_pet_to_customer(customer, 1)
+    increase_pets_sold(pet_shop, 1)
+    remove_customer_cash(customer, pet[:price])
+    add_or_remove_cash(pet_shop, pet[:price])
+  end
+end
+return nil
+end
