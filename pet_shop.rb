@@ -24,12 +24,10 @@ end
 
 def pets_by_breed(pet_shop, breed_name)
   breed_array = []
-  index_num = 0
-  for pet in pet_shop
-    if pet_shop[:pets][index_num][:breed] == breed_name
-      breed_array.push(pet_shop[:pets][index_num][:breed])
+  for pet in pet_shop[:pets]
+    if pet[:breed] == breed_name
+      breed_array.push(pet)
     end
-    index_num += 1
   end
   return breed_array
 end
@@ -76,14 +74,26 @@ def customer_can_afford_pet(customer, new_pet)
   return false
 end
 
-def sell_pet_to_customer(pet_shop, pet_wanted, customer)
-  for pet in pet_shop[:pets]
-    if pet == pet_wanted && customer[:cash] >= pet_wanted[:price]
-      customer[:pets].push(pet)
-      pet_shop[:admin][:pets_sold] += 1
-      customer[:cash] -= pet[:price]
-      pet_shop[:admin][:total_cash] += pet[:price]
-    end
-  end
-  return nil
-end
+# def sell_pet_to_customer(pet_shop, pet_wanted, customer)
+#   for pet in pet_shop[:pets]
+#     if pet == pet_wanted && customer[:cash] >= pet_wanted[:price]
+#       customer[:pets].push(pet)
+#       pet_shop[:admin][:pets_sold] += 1
+#       customer[:cash] -= pet[:price]
+#       pet_shop[:admin][:total_cash] += pet[:price]
+#     end
+#   end
+#   return nil
+# end
+#
+# def sell_pet_to_customer(pet_shop, pet_wanted, customer)
+# for pet in petshop[:pets]
+#   if pet == pet_wanted && customer[:cash] >= pet_wanted[:price]
+#      add_pet_to_customer(customer, pet_wanted)
+#      pets_sold(pet_shop) + 1
+#      customer_cash(customer) -= pet[:price]
+#      total_cash(pet_shop) += pet[:price]
+#   end
+# end
+# return nil
+# end
